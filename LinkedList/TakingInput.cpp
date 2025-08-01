@@ -4,6 +4,7 @@ struct Node
 {
     int data;
     Node* next;
+
     Node(int value)
     {
         data = value;
@@ -25,15 +26,15 @@ int main()
         }
         else
         {
-            tail -> next = newNode;
+            tail->next = newNode;
             tail = newNode;
         }
     }
     Node* temp = head;
     while(temp != NULL)
     {
-        cout<< temp -> data <<" -> ";
-        temp = temp -> next;
+        cout<< temp->data <<" -> ";
+        temp = temp->next;
     }
     cout<<"NULL"<<endl;
     return 0;
