@@ -34,13 +34,11 @@ void insertAtMiddle(Node* &head, int pos, int value) {
         }
         temp = temp->next;
     }
-
     if (temp == NULL) {
         cout << "Position out of bounds" << endl;
         delete newNode;
         return;
     }
-
     newNode->next = temp->next;
     temp->next = newNode;
 }
