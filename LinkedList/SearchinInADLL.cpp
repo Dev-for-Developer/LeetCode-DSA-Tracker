@@ -63,6 +63,22 @@ void searchTheValueInReverse(Node* &tail,int value)
     }
     return;
 }
+void searchesFromBothEnds(Node* &head, Node* &tail, int value)
+{
+    Node* temp1 = head;
+    Node* temp2 = tail;
+    while(temp1 != NULL && temp2 != NULL && temp1 != temp2 -> next)
+    {
+        if(temp1 -> data == value || temp2 -> data == value)
+        {
+            cout<<"Value exists in the list..."<<endl;
+            return;
+        }
+        temp1 = temp1 -> next;
+        temp2 = temp2 -> prev;
+    }
+    cout<<"Value not found..."<<endl;    
+}
 int main()
 {
     Node* head = NULL;
