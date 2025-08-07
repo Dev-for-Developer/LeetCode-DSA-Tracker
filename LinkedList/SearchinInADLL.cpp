@@ -44,6 +44,24 @@ void searchTheValueInReverse(Node* &tail,int value)
         cout<<"List is empty..."<<endl;
         return;
     }
+    Node* temp = tail;
+    bool flag = false;
+    while(temp -> prev != NULL)
+    {
+        if(temp -> data == value)
+        {
+            cout<<"Value exists in the list..."<<endl;
+            flag = true;
+            return;
+        }
+        temp = temp -> prev;
+    }
+    if(!flag)
+    {
+        cout<<"Value not found..."<<endl;
+        return;
+    }
+    return;
 }
 int main()
 {
