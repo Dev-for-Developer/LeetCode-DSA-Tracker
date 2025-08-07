@@ -67,19 +67,23 @@ void insertAtPos(Node* &head, int pos, int value)
 }
 void deleteAtBeginning(Node* &head)
 {
+    if(head == NULL) return; 
     Node* temp = head;
     head = head -> next;
-    head -> prev = NULL;
+    if(head != NULL)
+        head -> prev = NULL;
     delete temp;
 }
 void deleteAtEnd(Node* &tail)
 {
+    if(tail == NULL) return; 
     Node* toDelete = tail;
-    tail -> prev -> next = NULL;
     tail = tail -> prev;
+    if(tail != NULL)
+        tail -> next = NULL;
     delete toDelete;
-    return;
 }
+
 void deleteAtPos(Node* &head,int pos)
 {
     if(pos == 0)
@@ -108,6 +112,11 @@ void deleteAtPos(Node* &head,int pos)
         temp = temp -> next;
     }
     Node* toDelete = temp -> next;
+    if(toDelete == NULL)
+    {
+        cout<<"Invalid Position..."<<endl;
+        return;
+    }
     temp -> next = toDelete -> next;
     if(toDelete -> next != NULL)
     {
