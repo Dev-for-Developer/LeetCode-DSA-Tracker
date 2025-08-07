@@ -46,7 +46,7 @@ void searchTheValueInReverse(Node* &tail,int value)
     }
     Node* temp = tail;
     bool flag = false;
-    while(temp -> prev != NULL)
+    while(temp != NULL)
     {
         if(temp -> data == value)
         {
