@@ -14,7 +14,28 @@ struct Node
 };
 void reverseTheList(Node* &head)
 {
-    
+    Node* temp = head;
+    Node* newHead = NULL;
+    while(temp != NULL)
+    {
+        Node* nextNode = temp -> next;
+        temp -> next = temp -> prev;
+        temp -> prev = nextNode;
+        newHead = temp;
+        temp = temp -> prev;
+    }
+    head = newHead;
+}
+void printTheList(Node* &head)
+{
+    Node* temp = head;
+    while(temp != NULL)
+    {
+        cout<<temp -> data<<" -> ";
+        temp = temp -> next;
+    }
+    cout<<"NULL"<<endl;
+    return;
 }
 int main()
 {
@@ -36,4 +57,6 @@ int main()
             tail = tail -> next;
         }
     }
+    reverseTheList(head);
+    printTheList(head);
 }
